@@ -31,3 +31,6 @@ print("\nDo children with HbSS have lower typical hemoglobin than HbSC?")
 print(f"HbSS median: {median_hemoglobin['HbSS']} g/dL")
 print(f"HbSC median: {median_hemoglobin['HbSC']} g/dL")
 print("YES - HbSS has lower hemoglobin")
+
+
+
