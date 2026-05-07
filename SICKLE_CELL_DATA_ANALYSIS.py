@@ -129,9 +129,45 @@ plt.title("Crises category" , fontsize=16)
 plt.xlabel("by age group", fontsize=12)
 plt.ylabel("pain crises")
 plt.tight_layout()
-plt.savefig("age_correlation_chart.png")
-plt.show()
+#plt.savefig("age_correlation_chart.png")
+#plt.show()
 
+#How has the number of diagnosis changed over the year
+#line graph
+Diagnosis_Per_Year =df.groupby("Diagnosis_Year")["Child_ID"].count()
+print(Diagnosis_Per_Year)
+
+#creating canvas
+plt.figure(figsize=(6,4))
+plt.plot (Diagnosis_Per_Year.index,
+          Diagnosis_Per_Year.values,
+          color ="steelblue",
+          marker="o",
+          linewidth= 2,
+          markersize= 7)
+#naming the chart
+plt.title("Diagnosis Trend" , fontsize=16)
+plt.xlabel("Years", fontsize=12)
+plt.ylabel("child ID")
+plt.tight_layout()
+#plt.savefig("Diagnosis_Trend_plt.png")
+#plt.show()
+
+#another method for line graph
+Diagnosis_Per_Year = df.groupby ('Diagnosis_Year')["Child_ID"].count()
+Diagnosis_Per_Year.plot (
+    kind="line", color="red",
+    marker="p",
+    linewidth= 2,
+    markersize= 7)
+
+#naming the chart
+plt.title("Diagnosis Trend" , fontsize=16)
+plt.xlabel("Years", fontsize=12)
+plt.ylabel("child ID")
+plt.tight_layout()
+plt.savefig("Diagnosis_Trend_plt.png")
+plt.show()
 
 
 
